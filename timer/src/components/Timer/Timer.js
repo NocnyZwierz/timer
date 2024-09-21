@@ -12,7 +12,7 @@ const Timer = () => {
     useEffect(() => {
       if (isRunning) {
         const id = setInterval(() => {
-          setTime(prevTime => prevTime + 1);
+          setTime(prevTime => prevTime + 10);
         }, 10);
         setIntervalId(id);
       }
@@ -43,19 +43,20 @@ const Timer = () => {
       setTime(0);
     };
   
+    const hours = Math.floor(time / 3600000);
+    const minutes = Math.floor((time % 3600000) / 60000);
+    const seconds = Math.floor((time % 60000) / 1000);
+    const milliseconds = time % 1000;
 
-    const minutes = Math.floor((time % 360000) / 6000);
-    const seconds = Math.floor((time % 6000) / 100);
-    const milliseconds = time % 100;
-    const centiseconds = Math.floor(time % 10);
     return (
         <div className={style.mainDiv}>
             <h1>Timer</h1>
             <p>
+            {hours.toString().padStart(2, "0")}:
             {minutes.toString().padStart(2, "0")}:
-            {seconds.toString().padStart(2, "0")}:
-            {milliseconds.toString().padStart(2, "0")}.
-            {centiseconds}
+            {seconds.toString().padStart(2, "0")}.
+            {milliseconds.toString().padStart(3, "0")}
+
             </p>
             <div className={style.buttonDiv}>
                 <Button onClick={start}>Start</Button>
