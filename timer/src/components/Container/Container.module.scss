@@ -1,4 +1,12 @@
+@import '../../style/settings.scss';
+
 .container  {
     max-width: 1200px;
-    margin: 20px auto
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    background-color: $color-dark;
+}
+body {
+    background-color: $color-dark;
 }

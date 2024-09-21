@@ -1,9 +1,10 @@
 import Container from "./components/Container/Container";
+import Timer from "./components/Timer/Timer";
 
 function App() {
   return (
     <Container>
-      <h1>Timer App start!</h1>
+      <Timer/>
     </Container>
   );
 }

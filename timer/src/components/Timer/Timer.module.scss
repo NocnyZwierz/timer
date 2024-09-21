@@ -1,0 +1,24 @@
+@import '../../style/settings.scss';
+
+.mainDiv {
+    width: 500px;
+    height: 200px;
+    background-color:$color-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+
+    .buttonDiv {
+        background-color: $color-dark;
+    }
+
+    h1 {
+        color: $color-light;
+    }
+
+    p {
+        color: $color-light;
+        font-size: 26px;
+    }
+}
